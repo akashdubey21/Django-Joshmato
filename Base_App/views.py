@@ -16,5 +16,8 @@ def Menu_view(request):
 def Book_table_view(request):
     return render(request, "book_table.html")
 
+def feedback(request):
+    return HttpResponse("Hi!, This is my feedback page")
+
 
 
