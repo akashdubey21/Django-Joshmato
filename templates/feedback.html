@@ -13,22 +13,22 @@ class="sub_page"
         <div class="container">
           <div class="heading_container">
             <h2>
-              Book A Table
+              Your Feedback
             </h2>
           </div>
           <div class="row">
             <div class="col-md-6">
               <div class="form_container">
-                <form action="">
+                <form action="{% url 'feedback' %}" method="POST" enctype="multipart/form-data">{% csrf_token %}
                   <div>
                     <input type="text" class="form-control" name="user_name" placeholder="Your Name" />
                   </div>
                   <div>
                     {% comment %} <input type="text_area" name="description" class="form-control" placeholder="Description" /> {% endcomment %}
-                    <textarea name="description" id="" class="form-control"  placeholder="Describe your experience" rows="4" cols="50"></textarea>
+                    <textarea name="description" id="" class="form-control" name="description"   placeholder="Describe your experience" rows="4" cols="50"></textarea>
                   </div>
                   <div>
-                    <select class="form-control nice-select wide">
+                    <select class="form-control nice-select wide" name="rating" >
                       <option value="" disabled selected>
                         Please give us Rating!
                       </option>
@@ -50,8 +50,8 @@ class="sub_page"
                     </select>
                   </div>
                   <div>
-                    <label for="formFileLg" class="form-label">Select image</label>
-                    <input class="form-control form-control-lg" id="formFileLg" type="image" alt="No image">
+                    <label for="formFileLg" class="form-label">Select Image</label>
+                    <input class="form-control form-control-lg" name='image' id="formFileLg" type="file">
                   </div>
                   <div class="btn_box">
                     <button>

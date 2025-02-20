@@ -28,11 +28,10 @@ class AboutUs(models.Model):
 
 
 class Feedback(models.Model):
-    user_name = models.CharField(max_length=50)
+    user_name = models.CharField(max_length=255)
     description = models.TextField(blank=False)
     rating = models.IntegerField()
-    image = models.ImageField(upload_to='Items/',blank=True)
-
+    image = models.ImageField(upload_to='feedback_images/', null=True, blank=True)  # Save inside /media/feedback_images/
     
     def __str__(self):
         return self.user_name
