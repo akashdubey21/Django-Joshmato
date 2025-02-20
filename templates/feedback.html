@@ -9,7 +9,61 @@ class="sub_page"
 
 {% block mainblock %}
       <!-- Feedback form -->
-
+      <section class="book_section layout_padding">
+        <div class="container">
+          <div class="heading_container">
+            <h2>
+              Book A Table
+            </h2>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form_container">
+                <form action="">
+                  <div>
+                    <input type="text" class="form-control" name="user_name" placeholder="Your Name" />
+                  </div>
+                  <div>
+                    {% comment %} <input type="text_area" name="description" class="form-control" placeholder="Description" /> {% endcomment %}
+                    <textarea name="description" id="" class="form-control"  placeholder="Describe your experience" rows="4" cols="50"></textarea>
+                  </div>
+                  <div>
+                    <select class="form-control nice-select wide">
+                      <option value="" disabled selected>
+                        Please give us Rating!
+                      </option>
+                      <option value="1">
+                        1
+                      </option>
+                      <option value="2">
+                        2
+                      </option>
+                      <option value="3">
+                        3
+                      </option>
+                      <option value="4">
+                        4
+                      </option>
+                      <option value="5">
+                        5
+                      </option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="formFileLg" class="form-label">Select image</label>
+                    <input class="form-control form-control-lg" id="formFileLg" type="image" alt="No image">
+                  </div>
+                  <div class="btn_box">
+                    <button>
+                      Submit
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
     <!-- end Feedback form -->
 {% endblock mainblock %}

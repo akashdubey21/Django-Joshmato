@@ -1,5 +1,5 @@
 from django.shortcuts import render,HttpResponse
-from Base_App.models import ItemList,Items,AboutUs,Feedback
+from Base_App.models import ItemList,Items,AboutUs,Feedback,BookTable
 # Create your views here.
 def Home_view(request):
     items = Items.objects.all()
@@ -9,7 +9,8 @@ def Home_view(request):
 
 
 def About_view(request):
-    return render(request, "about.html")
+    data = AboutUs.objects.all()
+    return render(request, "about.html",{'data':data})
 
 
 def Menu_view(request):
@@ -19,6 +20,17 @@ def Menu_view(request):
 
 
 def Book_table_view(request):
+    if request.method == "POST":
+        user_name = request.POST.get("user_name")
+        phone_number = request.POST.get("phone_number")
+        email = request.POST.get("email")
+        total_person = request.POST.get("total_person")
+        booking_date = request.POST.get("booking_date")
+        
+        if user_name != '' and phone_number != '' and email != '' and total_person != '' and booking_date != '':
+            data = BookTable(user_name=user_name, phone_number=phone_number, email= email, total_person=total_person, booking_date=booking_date)
+            data.save()
+            
     return render(request, "book_table.html")
 
 def feedback(request):
