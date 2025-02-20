@@ -19,16 +19,16 @@ class="sub_page"
           <div class="form_container">
             <form action="{% url 'Book_table_view' %}" method='POST'>{% csrf_token %}
               <div>
-                <input type="text" class="form-control" name="user_name" placeholder="Your Name" />
+                <input type="text" class="form-control" name="user_name" required placeholder="Your Name" />
               </div>
               <div>
-                <input type="text" class="form-control" name="phone_number" placeholder="Phone Number" />
+                <input type="text" class="form-control" name="phone_number" required placeholder="Phone Number" />
               </div>
               <div>
-                <input type="email" class="form-control" name="email" placeholder="Your Email" />
+                <input type="email" class="form-control" name="email" required placeholder="Your Email" />
               </div>
               <div>
-                <select class="form-control nice-select wide" name="total_person">
+                <select class="form-control nice-select wide" required name="total_person">
                   <option value="" disabled selected>
                     How many persons?
                   </option>
@@ -47,7 +47,7 @@ class="sub_page"
                 </select>
               </div>
               <div>
-                <input type="date" name="booking_date" class="form-control">
+                <input type="date" name="booking_date" required class="form-control">
               </div>
               <div class="btn_box">
                 <button>
