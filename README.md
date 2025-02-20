@@ -49,7 +49,7 @@ A full-featured **restaurant website** built with **Django** and **Bootstrap**, 
 
 1️⃣ **Clone the repository:**
 ```sh
-git clone https://github.com/your-username/restaurant-website.git
+git clone https://github.com/AbdullahRFA/Restaurants_website_project_django.git
 cd restaurant-website
 ```
 
